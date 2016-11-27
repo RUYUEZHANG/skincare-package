@@ -5,7 +5,7 @@
 %%  ~~function to do ... ~~
 }
 \description{
-Recode character catgorical variables into numeric.
+Recode character catgorical variables into numeric variables.
 }
 \usage{
 recodecatvar(x, d, y, z)
@@ -26,12 +26,16 @@ recodecatvar(x, d, y, z)
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+This function is designed to recode character variables into numeric variables.
+
+Before using this function to recode a column, all catgory names in this column should be listed and counted. For example, when recode for variable gender(including male and female), x=2, z=c("male","female"). In this case, recodecatvar function will recode all "male" into 1, and "female" into 2(the number follows the order of catgory names in argument z).
+
+
 }
 \value{
 %%  ~Describe the value returned
 %%  If it is a LIST, use
-\item{x}{:number of category}
+\item{x}{:number of categories}
 \item{d}{:the dataset you want to recode}
 \item{y}{:the column you want to recode}
 \item{z}{:a vector of all category names in this column}
