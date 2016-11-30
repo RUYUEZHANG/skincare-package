@@ -10,9 +10,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## package description
-This package is designed for data collected from a survey which contains many character catgorical variables or other similar dataset. 
+This package is designed for data collected from a survey which contains many character catgorical variables.
 
-This package helps to summary data and do some basic analysis. When dealing with data collected from survey, the most time-comsuming thing is to recode data. This package contains a function to simplify the recoding process. Also, sometimes we need to conduct t-test to several variables with a same variable. For example, we often need to decide whether age would make a significant difference to some variables. By using this function in the package, we can finish the process by a single function instead of doing it repeatedly.
+This package helps to summary data and do some basic analysis. When dealing with data collected from survey, the most time-comsuming thing is to recode data. This package contains a function to simplify the recoding process. Also, sometimes we need to conduct t-test to several variables with a same variable. By using this function in the package, we can finish the process by a single function instead of doing it repeatedly.
 
 ##Note: All examples below uses the data from skin-care preference survey
 ```{r}
@@ -26,16 +26,28 @@ colnames(egdata)<-c("submit-time","gender","age","income","money spent","skin-ty
 ```
 
 ## Introduction of functions
-## 1. Function: recodecatvar
+## 1. Function: summary.pie
+Usage: summary.pie(x,y)
+
+Description: This function is used to get pie chart of catgorical variables
+
+(More details: see the help file of summary.pie)
+
+Example: get summary chart of gender and age in skin-care preference data
+
+```{r}
+library(skincare)
+summary.pie(egdata,2)
+summary.pie(egdata,3)
+```
+
+
+## 2. Function: recodecatvar
 Usage: recodecatvar(x, d, y, z)
 
-description:Recode character catgorical variables into numeric variables.
+Description:Recode character catgorical variables into numeric variables.
 
-Arguments:
-x(numeric): number of categories within this column
-d(data.frame): the dataset 
-y(numeric): the column to be recoded
-z(vector): a vector contains all the catgory names of the variable
+(More details: see the help file of recodecatvar)
 
 Example: 
 Recode gender, skin-type and age in skincare-preference data
@@ -57,7 +69,7 @@ print(egdata[1:10,])
 
 ```
 
-## 2. Function: multittest
+## 3. Function: multittest
 Usage: multittest(x, y, z)
 
 Description: This function is designed to do t-test to several variables with a same variable.
