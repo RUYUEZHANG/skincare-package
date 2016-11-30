@@ -3,7 +3,7 @@
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{multittest}
 \description{
-This function is helpful when you want to do t-test between one exact variable with several variables.
+This function is helpful to do t-test to several variables with a same variable.
 }
 \usage{
 multittest(x, y, z)

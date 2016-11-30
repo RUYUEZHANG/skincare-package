@@ -1,0 +1,74 @@
+---
+title: "skincare package"
+author: "Ruyue Zhang"
+date: "November 29, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## package description
+This package is designed for data collected from a survey which contains many character catgorical variables or other similar dataset. 
+
+This package helps to summary data and do some basic analysis. When dealing with data collected from survey, the most time-comsuming thing is to recode data. This package contains a function to simplify the recoding process. Also, sometimes we need to conduct t-test to several variables with a same variable. For example, we often need to decide whether age would make a significant difference to some variables. By using this function in the package, we can finish the process by a single function instead of doing it repeatedly.
+
+##Note: All examples below uses the data from skin-care preference survey
+```{r}
+#import data directly from Googlesheet
+library(googlesheets)
+egdata<-gs_url("https://docs.google.com/spreadsheets/d/1sGAW3lR6KZOSsPVkJ40CQqeUQtLku-cgvCf81sY-2Es/edit?usp=sharing")
+egdata<-gs_read(egdata)
+egdata<-as.data.frame(egdata)
+colnames(egdata)<-c("submit-time","gender","age","income","money spent","skin-type","numberofproducts_day", "aspect","suncare_frequency","skincare-frequency","","condition","age_start","time_skincare_day","makeup-fre","")
+
+```
+
+## Introduction of functions
+## 1. Function: recodecatvar
+Usage: recodecatvar(x, d, y, z)
+
+description:Recode character catgorical variables into numeric variables.
+
+Arguments:
+x(numeric): number of categories within this column
+d(data.frame): the dataset 
+y(numeric): the column to be recoded
+z(vector): a vector contains all the catgory names of the variable
+
+Example: 
+Recode gender, skin-type and age in skincare-preference data
+```{r}
+library(skincare)
+print(egdata[1:10,])
+
+catname.gender<-c("female","male","other")
+egdata<-recodecatvar(3,egdata,2,catname.gender) #recode gender
+
+
+catname.age<-c("below 20","20s","30s","40s","above 50")
+egdata<-recodecatvar(5,egdata,3,catname.age) #recode age
+
+catname.type<-c("dry","normal","oily","combinational","sensitive")
+egdata<-recodecatvar(5,egdata,6,catname.type) #recode skin-type
+
+print(egdata[1:10,])
+
+```
+
+## 2. Function: multittest
+Usage: multittest(x, y, z)
+
+Description: This function is designed to do t-test to several variables with a same variable.
+
+(More details: see the help file of multittest)
+
+Example: 
+Do t-test i)between age and skintype
+          ii)between gender and skintype
+```{r}
+library(skincare)
+coln<-c(2,3)
+multittest(egdata,6,coln)
+```

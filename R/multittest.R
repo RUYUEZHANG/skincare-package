@@ -1,8 +1,3 @@
-#do t-test for several variables
-#x is a dataset
-#y is a variable
-#z is a character vector contains the column names you want to do t-test with y
-#the data requires to be formatted
 multittest<-function(x,y,z) {
   z<-as.matrix(z)
   n<-nrow(z)
