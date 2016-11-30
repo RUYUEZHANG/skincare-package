@@ -1,0 +1,8 @@
+Package: skincare
+Type: Package
+Title: Deal with data collected from survey
+Version: 0.1.0
+Authors@R: person("Ruyue", "Zhang", email = "Ruyue_Zhang@urmc.rochester.com", role = c("aut", "cre"))
+Description: Recode character catgorical variables and conduct t-test on one common variable with several other variables.
+License: What license is it under?
+LazyData: TRUE

@@ -3,7 +3,7 @@
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{multittest}
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+This function is helpful when you want to do t-test between one exact variable with several variables.
 }
 \usage{
 multittest(x, y, z)
@@ -11,13 +11,13 @@ multittest(x, y, z)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-a dataset containing two or more variables
+ : a dataset containing two or more variables
 }
   \item{y}{
-a non-negative number which is no greater than the column numbers of x
+: a non-negative number which is no greater than the column numbers of x
 }
   \item{z}{
-a numerical vector
+: a numerical vector
 }
 }
 
@@ -59,7 +59,3 @@ multittest(mtcars,1,c(2,3))
 ##mean of x mean of y
 ## 20.09062 230.72188
 
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
