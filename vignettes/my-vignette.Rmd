@@ -54,6 +54,12 @@ summary.pie(egdata,2)
 summary.pie(egdata,3)
 ```
 
+Get a summary chart of what aspects influence people most when make skin-care products purchase
+```{r}
+summary.pie(egdata,8)
+```
+
+This indicates the top 3 aspects affect people's choice of skin-care products are: popularity, ingredients and price
 
 ## 2. Function: recodecatvar
 Usage: recodecatvar(x, d, y, z)
