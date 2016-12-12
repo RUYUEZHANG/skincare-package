@@ -8,6 +8,19 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+## Link of this survey
+https://goo.gl/forms/zJyiOKESUtL4oErg2
+
+## Motivation of this survey
+I've always been intrested in skin-care and followed many bloggers who introduce their skin care preference and routine on Youtube. 
+
+However, I found some interesting phenominal in daily life. For example, male are more likely to have oily skin-type, compared to female. Is this true or is it just a coincidence? Besides, many skin-care bloggers encourage people to use sun-care products every day, even if there is no sunshine at all. Is sun-care products really that necessary? And girls are always told by their monther(at least in China), frequently wearing make-up would destroy our skin. But some people said if you use make-up products of high quality and make sure to clean it with make-up remover, your skin condition could even be better.
+
+With all these puzzles I designed this survey, trying to figure out would these facts really change our skin-care condition. Besides, I'm also intrested in skin-care products purchase habits of people with defferent age and income. 
+
+## Where did I get the data
+I use Google sheet to collect data of this survey, and I put the link of survey on Facebook.
+
 
 ## package description
 This package is designed for data collected from a survey which contains many character catgorical variables.
