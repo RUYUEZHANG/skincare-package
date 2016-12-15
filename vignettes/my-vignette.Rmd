@@ -102,3 +102,5 @@ library(skincare)
 coln<-c(2,3)
 multittest(egdata,6,coln)
 ```
+
+The result indicates that gender does have significant influence on skin type and males tends to have normal and oily skin.
