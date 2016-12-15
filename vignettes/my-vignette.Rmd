@@ -14,9 +14,9 @@ https://goo.gl/forms/zJyiOKESUtL4oErg2
 ## Motivation of this survey
 I've always been intrested in skin-care and followed many bloggers who introduce their skin care preference and routine on Youtube. 
 
-However, I found some interesting phenominal in daily life. For example, male are more likely to have oily skin-type, compared to female. Is this true or is it just a coincidence? Besides, many skin-care bloggers encourage people to use sun-care products every day, even if there is no sunshine at all. Is sun-care products really that necessary? And girls are always told by their monther(at least in China), frequently wearing make-up would destroy our skin. But some people said if you use make-up products of high quality and make sure to clean it with make-up remover, your skin condition could even be better.
+However, I noticed some interesting phenomenon in daily life. For example, males are more likely to have oily skin-type, compared to females. Is this true or is it just a coincidence? Besides, many skin-care bloggers encourage people to use sun-care products every day, even if it is not sunny. Are sun-care products really that necessary? And girls are always told by their monther(at least in China), frequently wearing make-up would destroy our skin. But some people said if you use make-up products of high quality and make sure to clean it with make-up remover, your skin condition could even be better.
 
-With all these puzzles I designed this survey, trying to figure out would these facts really change our skin-care condition. Besides, I'm also intrested in skin-care products purchase habits of people with defferent age and income. 
+With all these puzzles I designed this survey, trying to figure out some facts about skin-care. Besides, I'm also intrested in skin-care products purchase habits of people with defferent age and income. 
 
 ## Where did I get the data
 I use Google sheet to collect data of this survey, and I put the link of survey on Facebook.
@@ -28,14 +28,13 @@ This package is designed for data collected from a survey which contains many ch
 This package helps to summary data and do some basic analysis. When dealing with data collected from survey, the most time-comsuming thing is to recode data. This package contains a function to simplify the recoding process. Also, sometimes we need to conduct t-test to several variables with a same variable. By using this function in the package, we can finish the process by a single function instead of doing it repeatedly.
 
 ##Note: All examples below uses the data from skin-care preference survey
+
 ```{r}
 #import data directly from Googlesheet
-library(googlesheets)
-egdata<-gs_url("https://docs.google.com/spreadsheets/d/1sGAW3lR6KZOSsPVkJ40CQqeUQtLku-cgvCf81sY-2Es/edit?usp=sharing")
-egdata<-gs_read(egdata)
+library(skincare)
+egdata<-readgoogle("https://docs.google.com/spreadsheets/d/1sGAW3lR6KZOSsPVkJ40CQqeUQtLku-cgvCf81sY-2Es/edit?usp=sharing")
 egdata<-as.data.frame(egdata)
 colnames(egdata)<-c("submit-time","gender","age","income","money spent","skin-type","numberofproducts_day", "aspect","suncare_frequency","skincare-frequency","","condition","age_start","time_skincare_day","makeup-fre","")
-
 ```
 
 ## Introduction of functions
